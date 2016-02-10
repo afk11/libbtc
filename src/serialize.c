@@ -127,7 +127,7 @@ btc_bool deser_i32(int32_t* vo, struct const_buffer* buf)
     if (!deser_bytes(&v, buf, sizeof(v)))
         return false;
 
-    *vo = le16toh(v);
+    *vo = le32toh(v);
     return true;
 }
 
