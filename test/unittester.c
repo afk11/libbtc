@@ -53,7 +53,7 @@ extern void test_tx_sighash();
 extern void test_script_parse();
 extern void test_script_op_codeseperator();
 extern void test_eckey();
-
+extern void test_block();
 
 extern void btc_ecc_start();
 extern void btc_ecc_stop();
@@ -84,6 +84,7 @@ int main()
     u_run_test(test_tx_sighash);
     u_run_test(test_script_parse);
     u_run_test(test_script_op_codeseperator);
+    u_run_test(test_block);
 
     u_run_test(test_eckey);
 
