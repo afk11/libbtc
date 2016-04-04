@@ -402,3 +402,13 @@ btc_bool btc_script_build_p2sh(cstring* script_in, const uint8_t* hash160)
 
     return true;
 }
+
+btc_bool btc_script_build_witness(cstring *script_in, int version, cstring* program)
+{
+    enum opcodetype ver_op = btc_encode_op_n(version);
+
+    cstr_resize(script_in, 0); //clear script
+    btc_script_append_op(script_in, ver_op);
+    btc_script_append_pushdata(script_in, program->str, sizeof(program->str));
+    return true;
+}
